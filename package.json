@@ -7,12 +7,15 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "bootstrap": "^4.5.3",
+    "pagination-react-hooks": "^1.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.0.7",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "reactstrap": "^8.7.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
