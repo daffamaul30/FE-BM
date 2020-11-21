@@ -5,7 +5,7 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import { HeaderVisitor } from './components';
+import { HeaderVisitor, Footer } from './components';
 import routes from './config/routes';
 import './App.css';
 
@@ -48,6 +48,7 @@ function App() {
           );
         })}
       </Switch>
+      <Footer />
     </Router>
   );
 }

@@ -40,11 +40,6 @@ const routes = [
     isPublic: true,
   },
   {
-    path: '/dashboard',
-    component: Beranda,
-    isPublic: true,
-  },
-  {
     path: '/',
     component: Beranda,
     isPublic: true,

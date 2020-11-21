@@ -1,5 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from 'reactstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
@@ -7,10 +19,16 @@ import './style.css';
 import { Main } from '../../assets/images';
 
 const HeaderVisitor = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   const menus = [
     {
       name: 'Beranda',
-      path: 'dashboard',
+      path: '',
     },
     {
       name: 'Penulis',
@@ -34,38 +52,82 @@ const HeaderVisitor = () => {
     },
   ];
 
+  const expandMenu = [
+    {
+      name: 'Artikel',
+      subs: [
+        {
+          subName: 'A',
+          subPath: '',
+        },
+        {
+          subName: 'B',
+          subPath: '',
+        },
+        {
+          subName: 'C',
+          subPath: '',
+        },
+        {
+          subName: 'D',
+          subPath: '',
+        },
+      ],
+    },
+  ];
+
   const header = menus.map((menu) => {
+    const found = expandMenu.find((item) => {
+      return item.name === menu.name;
+    });
+    if (!found) {
+      return (
+        <NavItem>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to={`/${menu.path}`}
+            key={menu.path}
+          >
+            <NavLink>{menu.name}</NavLink>
+          </Link>
+        </NavItem>
+      );
+    }
     return (
-      <Link
-        style={{ textDecoration: 'none' }}
-        to={`/${menu.path}`}
-        key={menu.path}
-      >
-        <li className="nav-item">
-          <p className="nav-link">{menu.name}</p>
-        </li>
-      </Link>
+      <UncontrolledDropdown nav inNavbar>
+        <DropdownToggle nav caret>
+          {menu.name}
+        </DropdownToggle>
+        <DropdownMenu right>
+          {found.subs.map((sub) => {
+            return (
+              <Link
+                style={{ textDecoration: 'none' }}
+                to={`/${sub.subPath}`}
+                key={sub.subPath}
+              >
+                <DropdownItem>{sub.subName}</DropdownItem>
+              </Link>
+            );
+          })}
+        </DropdownMenu>
+      </UncontrolledDropdown>
     );
   });
 
   return (
     <>
-      <div className="text-center logo">
-        <Link to="/dashboard">
+      <Link style={{ textDecoration: 'none' }} to="/">
+        <div className="text-center logo">
           <img alt="Birokrat Menulis" src={Main} />
-        </Link>
-      </div>
-      <nav className="navbar navbar-expand-sm sticky-top">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapsibleNavbar"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul className="navbar-nav mx-auto">{header}</ul>
+        </div>
+      </Link>
+      <Navbar light expand="md">
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mx-auto custom-toggler" navbar>
+            {header}
+          </Nav>
           <form className="form-inline my-2 my-lg-0">
             <input
               className="form-control mr-sm-2"
@@ -77,8 +139,8 @@ const HeaderVisitor = () => {
               Search
             </button>
           </form>
-        </div>
-      </nav>
+        </Collapse>
+      </Navbar>
     </>
   );
 };
