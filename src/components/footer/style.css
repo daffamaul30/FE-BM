@@ -23,8 +23,8 @@ footer {
 
 .copyright p,
 .col img {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 .socmed {
@@ -40,8 +40,8 @@ footer {
 
 .copyright-socmed {
   display: inline-flex;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .col a::before {
@@ -59,4 +59,58 @@ footer {
 
 .col a:hover::before {
   transform: scaleX(1);
+}
+
+.bottom-info .col {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 10px;
+}
+
+.bottom-info .col p {
+  text-align: justify;
+  font-size: small;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.second-logo {
+  width: 170px !important;
+}
+
+#btn-buku-perdana {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: bold;
+  border: none;
+}
+
+#title-perspektif-penulis {
+  color: var(--secondary-color);
+}
+
+@media only screen and (max-width: 600px) {
+  .copyright-socmed {
+    position: relative;
+    display: inline-block;
+  }
+  .socmed {
+    width: 200px;
+    position: relative;
+    right: 0;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .copyright-socmed {
+    position: relative;
+    display: inline-block;
+  }
+  .socmed {
+    width: 200px;
+    position: relative;
+    right: 0;
+    margin-right: 0px;
+  }
 }

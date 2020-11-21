@@ -1,11 +1,11 @@
 @import url('../../utils/color.css');
 
 .logo img {
-  width: 370px;
+  width: 300px;
 }
 
 .logo {
-  padding: 20px;
+  padding: 10px;
   background-color: var(--primary-color);
 }
 
@@ -21,6 +21,7 @@
 form {
   position: absolute;
   right: 0;
+  top: 0;
   margin-right: 10px;
   margin-bottom: 0;
   color: var(--primary-color);
@@ -29,6 +30,7 @@ form {
 form .form-control {
   border-radius: 0px;
   border: px solid var(--primary-color);
+  margin-right: 0;
 }
 
 form .btn {
@@ -65,9 +67,46 @@ form .btn:hover {
 button.navbar-toggler {
   border: 2px solid var(--secondary-color) !important;
   background-color: var(--primary-color) !important;
-  height: 50px;
+  height: 45px;
 }
 
-button.navbar-toggler:active {
-  border: 2px solid var(--primary-color) !important;
+.fomr-inline .form-control {
+  width: 50px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+  form .form-control {
+    width: 150px !important;
+  }
+  form {
+    position: absolute;
+  }
+  .logo img {
+    width: 200px;
+  }
+  .logo {
+    padding: 5px;
+  }
+  form.form-inline.my-2.my-lg-0 {
+    margin-top: -5px !important;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  form .form-control {
+    width: 100px !important;
+  }
+  form {
+    position: absolute;
+  }
+  .logo img {
+    width: 200px;
+  }
+  .logo {
+    padding: 5px;
+  }
+  form.form-inline.my-2.my-lg-0 {
+    margin-top: -5px !important;
+  }
 }

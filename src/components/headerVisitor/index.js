@@ -82,23 +82,19 @@ const HeaderVisitor = () => {
     });
     if (!found) {
       return (
-        <NavItem>
-          <Link
-            style={{ textDecoration: 'none' }}
-            to={`/${menu.path}`}
-            key={menu.path}
-          >
+        <NavItem key={menu.path}>
+          <Link style={{ textDecoration: 'none' }} to={`/${menu.path}`}>
             <NavLink>{menu.name}</NavLink>
           </Link>
         </NavItem>
       );
     }
     return (
-      <UncontrolledDropdown nav inNavbar>
+      <UncontrolledDropdown nav inNavbar key={menu.path}>
         <DropdownToggle nav caret>
           {menu.name}
         </DropdownToggle>
-        <DropdownMenu right>
+        <DropdownMenu left>
           {found.subs.map((sub) => {
             return (
               <Link
@@ -128,18 +124,18 @@ const HeaderVisitor = () => {
           <Nav className="mx-auto custom-toggler" navbar>
             {header}
           </Nav>
-          <form className="form-inline my-2 my-lg-0">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Apa yang kamu cari?"
-              aria-label="Search"
-            />
-            <button className="btn my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
         </Collapse>
+        <form className="form-inline my-2 my-lg-0">
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Cari"
+            aria-label="Search"
+          />
+          <button className="btn my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
       </Navbar>
     </>
   );
