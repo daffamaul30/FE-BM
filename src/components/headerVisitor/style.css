@@ -22,12 +22,13 @@ form {
   position: absolute;
   right: 0;
   margin-right: 10px;
+  margin-bottom: 0;
   color: var(--primary-color);
 }
 
 form .form-control {
   border-radius: 0px;
-  border: 2px solid var(--primary-color);
+  border: px solid var(--primary-color);
 }
 
 form .btn {
@@ -44,15 +45,11 @@ form .btn:hover {
 
 .nav-link {
   cursor: pointer;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   margin-bottom: 0;
   font-weight: bolder;
   color: var(--primary-color);
-}
-
-Link:hover{
-  text-decoration: none;
 }
 
 .nav-item {

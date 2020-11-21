@@ -34,11 +34,13 @@ const HeaderVisitor = () => {
     },
   ];
 
-  // const expandMenu = [];
-
   const header = menus.map((menu) => {
     return (
-      <Link to={`/${menu.path}`} key={menu.path}>
+      <Link
+        style={{ textDecoration: 'none' }}
+        to={`/${menu.path}`}
+        key={menu.path}
+      >
         <li className="nav-item">
           <p className="nav-link">{menu.name}</p>
         </li>
@@ -49,7 +51,9 @@ const HeaderVisitor = () => {
   return (
     <>
       <div className="text-center logo">
-        <img alt="Birokrat Menulis" src={Main} />
+        <Link to="/dashboard">
+          <img alt="Birokrat Menulis" src={Main} />
+        </Link>
       </div>
       <nav className="navbar navbar-expand-sm sticky-top">
         <button
