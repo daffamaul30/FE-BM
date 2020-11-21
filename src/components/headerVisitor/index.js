@@ -125,7 +125,7 @@ const HeaderVisitor = () => {
             {header}
           </Nav>
         </Collapse>
-        <form className="form-inline my-2 my-lg-0">
+        {/* <form className="form-inline my-2 my-lg-0">
           <input
             className="form-control mr-sm-2"
             type="search"
@@ -134,6 +134,17 @@ const HeaderVisitor = () => {
           />
           <button className="btn my-2 my-sm-0" type="submit">
             Search
+          </button>
+        </form> */}
+        <form id="form-search" onSubmit={() => {}} role="search">
+          <input
+            id="input-search"
+            type="search"
+            placeholder="Search..."
+            required
+          />
+          <button id="submit-search" type="submit">
+            Cari
           </button>
         </form>
       </Navbar>

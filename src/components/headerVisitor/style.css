@@ -18,33 +18,6 @@
   padding: 0;
 }
 
-form {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin-right: 10px;
-  margin-bottom: 0;
-  color: var(--primary-color);
-}
-
-form .form-control {
-  border-radius: 0px;
-  border: px solid var(--primary-color);
-  margin-right: 0;
-}
-
-form .btn {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 0px;
-}
-
-form .btn:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
 .nav-link {
   cursor: pointer;
   padding-top: 8px;
@@ -70,43 +43,90 @@ button.navbar-toggler {
   height: 45px;
 }
 
-.fomr-inline .form-control {
-  width: 50px;
+/* Search Feature */
+
+#form-search {
+  position: absolute;
+  width: 15rem;
+  right: 0;
+  margin-right: 50px;
+  background: var(--primary-color);
+}
+#input-search,
+#submit-search {
+  height: 40px;
+  border: 1px solid var(--primary-color);
+}
+
+input[type='search'] {
+  outline: 0;
+  width: 100%;
+  background: white;
+  padding: 5px;
+  appearance: none;
+  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+#submit-search {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  font-weight: bold;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+input:not(:placeholder-shown) {
+  width: calc(100% - 70px);
 }
 
 /* Responsive */
 @media only screen and (max-width: 600px) {
-  form .form-control {
-    width: 150px !important;
+  #input-search {
+    width: 180px !important;
   }
-  form {
+  #form-search {
     position: absolute;
+    top: 0;
+    margin-top: 1.5px;
+    margin-right: 2px;
   }
+  #submit-search {
+    width: 55px;
+  }
+
   .logo img {
     width: 200px;
   }
   .logo {
     padding: 5px;
-  }
-  form.form-inline.my-2.my-lg-0 {
-    margin-top: -5px !important;
   }
 }
 
 @media only screen and (max-width: 300px) {
-  form .form-control {
-    width: 100px !important;
+  body{
+    font-size: 15px;
   }
-  form {
+  #input-search {
+    width: 105px !important;
+  }
+  #form-search {
     position: absolute;
+    top: 0;
+    margin-top: 1.5px;
+    margin-right: 2px;
+    width: 10rem;
+  }
+  #submit-search {
+    width: 55px;
   }
   .logo img {
     width: 200px;
   }
   .logo {
     padding: 5px;
-  }
-  form.form-inline.my-2.my-lg-0 {
-    margin-top: -5px !important;
   }
 }
