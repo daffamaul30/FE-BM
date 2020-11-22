@@ -118,10 +118,10 @@ const HeaderVisitor = () => {
           <img alt="Birokrat Menulis" src={Main} />
         </div>
       </Link>
-      <Navbar light expand="md">
+      <Navbar className="navigation" dark expand="md">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mx-auto custom-toggler" navbar>
+          <Nav className="mx-auto custom-toggler text-center" navbar>
             {header}
           </Nav>
         </Collapse>

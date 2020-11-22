@@ -2,15 +2,12 @@
 
 .logo img {
   width: 300px;
+  cursor: pointer;
 }
 
 .logo {
   padding: 10px;
   background-color: var(--primary-color);
-}
-
-.logo img {
-  cursor: pointer;
 }
 
 .navbar {
@@ -23,7 +20,7 @@
   padding-top: 8px;
   padding-bottom: 8px;
   margin-bottom: 0;
-  font-weight: bolder;
+  font-weight: 600;
   color: var(--primary-color) !important;
   transition: 0.3s linear;
 }
@@ -104,6 +101,13 @@ input:not(:placeholder-shown) {
   .logo {
     padding: 5px;
   }
+  .nav-item {
+    border-bottom: 1px dotted var(--primary-color);
+    border-width: 80%;
+  }
+  .nav-item:last-child {
+    border-bottom: 0px;
+  }
 }
 
 @media only screen and (max-width: 300px) {
@@ -128,5 +132,12 @@ input:not(:placeholder-shown) {
   }
   .logo {
     padding: 5px;
+  }
+  .nav-item {
+    border-bottom: 1px dotted var(--primary-color);
+    border-width: 80%;
+  }
+  .nav-item:last-child {
+    border-bottom: 0px;
   }
 }
