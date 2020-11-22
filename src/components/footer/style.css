@@ -61,18 +61,28 @@ footer {
   transform: scaleX(1);
 }
 
-.bottom-info .col {
+.bottom-info {
   padding-left: 50px;
   padding-right: 50px;
-  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 40%;
+  font-weight: lighter;
+  margin: auto;
+  font-size: 13px;
 }
 
-.bottom-info .col p {
+.bottom-info p {
+  text-align: justify;
+  margin-top: 5px;
+}
+
+/* .bottom-info .col p {
   text-align: justify;
   font-size: small;
   font-weight: normal;
   margin-top: 10px;
-}
+} */
 
 .second-logo {
   width: 170px !important;
@@ -100,6 +110,16 @@ footer {
     right: 0;
     margin-right: 0px;
   }
+  .bottom-info {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    width: 100%;
+    font-weight: lighter;
+    margin: auto;
+    font-size: 12px;
+  }
 }
 
 @media only screen and (max-width: 300px) {
@@ -112,5 +132,15 @@ footer {
     position: relative;
     right: 0;
     margin-right: 0px;
+  }
+  .bottom-info {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    width: 100%;
+    font-weight: lighter;
+    margin: auto;
+    font-size: 10px;
   }
 }

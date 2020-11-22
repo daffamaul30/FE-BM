@@ -28,26 +28,28 @@ function App() {
   return (
     <Router>
       <HeaderVisitor />
-      <Switch>
-        {routes.map((route) => {
-          if (route.isPublic) {
+      <div className="container">
+        <Switch>
+          {routes.map((route) => {
+            if (route.isPublic) {
+              return (
+                <Route
+                  path={route.path}
+                  component={route.component}
+                  key={route.path}
+                />
+              );
+            }
             return (
-              <Route
+              <PrivateRoute
                 path={route.path}
                 component={route.component}
                 key={route.path}
               />
             );
-          }
-          return (
-            <PrivateRoute
-              path={route.path}
-              component={route.component}
-              key={route.path}
-            />
-          );
-        })}
-      </Switch>
+          })}
+        </Switch>
+      </div>
       <Footer />
     </Router>
   );

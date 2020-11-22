@@ -36,23 +36,17 @@ const Footer = () => {
   return (
     <footer>
       <div className="jumbotron">
-        <div>
-          <div className="bottom-info row">
-            <div className="col">
-              <img
-                className="second-logo"
-                alt="birokrat menulis"
-                src={Second}
-              />
-              <p>
-                Birokrat Menulis adalah sebuah gerakan untuk mendorong gerakan
-                literasi di kalangan para birokrat. Sebuah wadah dimana para
-                birokrat dan para pemerhati birokrat berkontribusi untuk
-                perbaikan negeri ini. Motto kami, kritis, cerdas, &
-                menginspirasi tanpa batas.
-              </p>
-            </div>
-            <div className="col">
+        {/* <div className="bottom-info row"> */}
+        <div className="bottom-info">
+          <img className="second-logo" alt="birokrat menulis" src={Second} />
+          <p>
+            Birokrat Menulis adalah sebuah gerakan untuk mendorong gerakan
+            literasi di kalangan para birokrat. Sebuah wadah dimana para
+            birokrat dan para pemerhati birokrat berkontribusi untuk perbaikan
+            negeri ini. Motto kami, kritis, cerdas, & menginspirasi tanpa batas.
+          </p>
+        </div>
+        {/* <div className="col">
               <h4 id="title-perspektif-penulis">Perspektif Penulis</h4>
               <p>
                 Pak Menteri Pendayagunaan Aparatur Negara dan Reformasi
@@ -86,9 +80,8 @@ const Footer = () => {
                 berbagai instansi baik pusat maupun daerah, beberapa akademisi
                 dan pengamat birokrasi.
               </p>
-            </div>
-          </div>
-        </div>
+            </div> */}
+        {/* </div> */}
       </div>
       <div className="copyright-socmed">
         <div className="socmed row">{socmed}</div>
