@@ -94,7 +94,7 @@ const HeaderVisitor = () => {
         <DropdownToggle nav caret>
           {menu.name}
         </DropdownToggle>
-        <DropdownMenu left>
+        <DropdownMenu left="true">
           {found.subs.map((sub) => {
             return (
               <Link

@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import { Second } from '../../assets/images';
+import { Second } from '../../assets/images';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
@@ -25,7 +25,7 @@ const Footer = () => {
 
   const socmed = dataSocmed.map((data) => {
     return (
-      <div className="col">
+      <div className="col" key={data.alt}>
         <a href="/">
           <img alt={data.alt} src={data.src} />
         </a>
@@ -38,7 +38,7 @@ const Footer = () => {
       <div className="jumbotron">
         <div>
           <div className="bottom-info row">
-            {/* <div className="col">
+            <div className="col">
               <img
                 className="second-logo"
                 alt="birokrat menulis"
@@ -86,7 +86,7 @@ const Footer = () => {
                 berbagai instansi baik pusat maupun daerah, beberapa akademisi
                 dan pengamat birokrasi.
               </p>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

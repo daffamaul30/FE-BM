@@ -1,4 +1,4 @@
-@import url('../../utils/color.css');
+@import url('../../utils/base.css');
 
 .logo img {
   width: 300px;
@@ -23,6 +23,7 @@
   font-weight: 600;
   color: var(--primary-color) !important;
   transition: 0.3s linear;
+  text-transform: uppercase;
 }
 
 .nav-item {
@@ -44,7 +45,7 @@ button.navbar-toggler {
 
 #form-search {
   position: absolute;
-  width: 15rem;
+  width: 250px;
   right: 0;
   margin-right: 50px;
   background: var(--primary-color);
@@ -71,17 +72,20 @@ input[type='search'] {
   position: absolute;
   top: 0;
   right: 0;
-  width: 70px;
+  width: var(--search-btn-width);
   font-weight: bold;
   background: var(--primary-color);
   color: var(--secondary-color);
 }
 input:not(:placeholder-shown) {
-  width: calc(100% - 70px);
+  width: calc(100% - var(--search-btn-width));
 }
 
 /* Responsive */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+  :root {
+    --search-btn-width: 55px;
+  }
   #input-search {
     width: 180px !important;
   }
@@ -91,10 +95,12 @@ input:not(:placeholder-shown) {
     margin-top: 1.5px;
     margin-right: 2px;
   }
-  #submit-search {
+  /* #submit-search {
     width: 55px;
+  } */
+  input:not(:placeholder-shown) {
+    width: calc(100% - var(--search-btn-width));
   }
-
   .logo img {
     width: 200px;
   }
@@ -111,7 +117,7 @@ input:not(:placeholder-shown) {
 }
 
 @media only screen and (max-width: 300px) {
-  body{
+  body {
     font-size: 15px;
   }
   #input-search {
